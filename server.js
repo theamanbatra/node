@@ -12,8 +12,8 @@ server.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
 // Routing
 app.use(express.static(path.join(__dirname, 'public')));
 
-const botName = 'ZoomCord Bot';
-const ACCEPTED_ROOMS = ["Malaysia", "Indonesia", "Singapore"];
+const botName = 'Couch Beat Team';
+const ACCEPTED_ROOMS = ["Malaysia", "Indonesia", "Couch"];
 
 // Run when client connets
 io.on('connection', socket => {
