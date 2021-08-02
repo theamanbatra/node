@@ -13,7 +13,7 @@ server.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
 app.use(express.static(path.join(__dirname, 'public')));
 
 const botName = 'Couch Beat Team';
-const ACCEPTED_ROOMS = ["Malaysia", "Indonesia", "Couch"];
+const ACCEPTED_ROOMS = ["Malaysia", "Personal", "Couch"];
 
 // Run when client connets
 io.on('connection', socket => {
