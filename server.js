@@ -31,7 +31,7 @@ io.on('connection', socket => {
             socket.join(user.room);
         
             // only show in client to the user connecting
-            socket.emit('message', formatMessage(botName, 'Welcome to ZoomCord!'));
+            socket.emit('message', formatMessage(botName, 'Welcome to Couch Beats'));
 
             // Broadcast to all except the user itself in a specif room
             socket.broadcast
