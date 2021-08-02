@@ -16,10 +16,14 @@ myVideo.muted = true
 
 const myPeer = new Peer({
     config: {'iceServers': [
-      { url: 'stun:stun.l.google.com:19302' },
-      { url: 'turn:18.218.116.19:3478',username: 'aman', credential: '123456' }
-    ]} /* Sample servers, please use appropriate ones */
-  })
+        { url: 'stun:stun.ekiga.net' },
+        { url: 'stun:stun1.l.google.com:19302' },
+        { url: 'stun:stun2.l.google.com:19302' },
+        { url: 'stun:stun3.l.google.com:19302' },
+        { url: 'stun:stun4.l.google.com:19302' },
+        { url: 'stun:stun01.sipphone.com' },
+        { url: 'stun:stun.l.google.com:19302' }
+        ]}})
 
 // const myPeer = new Peer()
 const peers = {}
