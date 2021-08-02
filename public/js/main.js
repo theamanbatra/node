@@ -14,15 +14,14 @@ myVideo.muted = true
 //     port: '3001'
 // })
 
-// const myPeer = new Peer({ key: 'oz9b3ni30qtcsor', debug: 3, config: {'iceServers': [
-//     { url: 'stun:stun.l.google.com:19302' },
-//     { url: 'turn:numb.viagenie.ca:3478', credential: 'muazkh', username:'web...@live.com' },
-//     { url: 'turn:numb.viagenie.ca', credential: 'muazkh', username:'web...@live.com' },
-//     { url: 'turn:192.158.29.39:3478?transport=udp', credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=', username:'28224511:1379330808' },
-//     { url: 'turn:192.158.29.39:3478?transport=tcp', credential: 'JZEOEt2V3Qb0y27GRntt2u2PAYA=', username:'28224511:1379330808' }
-// ]}});
+const myPeer = new Peer({
+    config: {'iceServers': [
+      { url: 'stun:stun.l.google.com:19302' },
+      { url: 'turn:18.218.116.19:3478',username: 'aman', credential: '123456' }
+    ]} /* Sample servers, please use appropriate ones */
+  })
 
-const myPeer = new Peer()
+// const myPeer = new Peer()
 const peers = {}
 
 let typing = false;
