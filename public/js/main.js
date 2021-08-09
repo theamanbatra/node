@@ -17,7 +17,7 @@ myVideo.muted = true
 const myPeer = new Peer({
     config: {'iceServers': [
         { url: 'stun:stun.l.google.com:19302' },
-        {url: 'turn:18.223.23.205:3478', username: 'guest', credential:'somepassword'}
+        {url: 'turn:3.21.92.164:3478', username: 'guest', credential:'somepassword'}
         ]}})
 
 // const myPeer = new Peer()
