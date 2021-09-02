@@ -96,6 +96,7 @@ io.on('connection', socket => {
                 });
 
                 socket.broadcast.to(user.room).emit('user-disconnected', userPeerId)
+                console.log(userPeerId)
             });
         }
     });
