@@ -1,58 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
-  <link rel="stylesheet" href="css/style.css">
-  <title>Couch Beats</title>
-</head>
-<body>
-
-
-  <div class="chat-container" >
-
-    <header class="chat-header">
-      <h1><i class="fas fa-video"></i> Couch Beats</h1>
-      <a href="index.html" class="btn">Exit</a>
-    </header>
-
-    <main class="chat-main">
-      <div class="chat-sidebar">
-        <iframe width="700" height="450" src="https://www.youtube.com/embed/lrv2fwUKfCs?&autoplay=1&mute=0&controls=0&showInfo=0" title="Live Performance" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+      <link rel="stylesheet" href="css/style.css">
+      <!-- <link rel="stylesheet" href="css/owl.carousel.min.css"> -->
+      <!-- <link rel="stylesheet" href="css/owl.theme.default.min.css">  -->
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+      <script src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js'></script>
+      <title>Couch Beats</title>
+      <style>
+        /*.videoWrapper 
+		{
+			position: relative;
+			padding-bottom: 56.25%;
+			padding-top: 25px;
+			height: 0;
+			max-width:853px;
+			width:100%;
+			margin:0 auto;
+		}*/
+		
+		.videoWrapper iframe {
+    position: fixed;
+    top: 8%;
+    left: 8%;
+    max-width: 593px;
+    max-height: 334px;
+    width: 100%;
+    height: 100%;
+    /* transform: translate(-50%, -50%); */
+    border: 1px solid #fff;
+}
+      </style>
+   </head>
+   <body>
+      <div class="vedio-bg">
+         <video src="images/couch.mp4" loop="" muted="" autoplay="">
+         </video>
       </div>
-      <div class="chat-messages">
-        
-        <div class="is-typing" id="is-typing">
-
-        </div>
-        
-      </div>
-      <div class="chat-form-container">
-        <form id="chat-form">
-          <input
-            id="msg"
-            type="text"
-            placeholder="Enter Message"
-            required
-            autocomplete="off"
-          />
-          <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
-        </form>
+      <div class="videoWrapper">
+        <iframe src="https://www.youtube.com/embed/lrv2fwUKfCs?&amp;autoplay=1&amp;" frameborder="0" allowfullscreen></iframe>
       </div>
       
-    </main>
-    
-    <div id="video-grid">
-    </div>
-    <h3><i class="fas fa-comments"></i> Room Name:</h3>
-    <h2 id="room-name"></h2>
-    <h3><i class="fas fa-users"></i> Users</h3>
-    <ul id="users"></ul>
-  </div>
-
-  <script
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+      <div class="thumbnail-slider"  >
+         <div class="owl-slider">
+            <div id="carousel" class="owl-carousel">
+               <div class="item">
+                <div id="video-grid">
+                </div>           
+                  </div>
+            
+            </div>
+         </div>
+      </div>
+      <div id="mySidenav" class="sidenav">
+         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+       
+         <div class="chat-fl ">
+            <div class="logo-arrow">
+               <h3>Chat</h3>
+               <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            </div>
+            <div class="chat-Cont chat-messages ">
+              <div class="is-typing" id="is-typing">
+  
+              </div>
+            </div>
+           
+          
+           
+         </div>
+		 <div class="chat-send">
+			<form id="chat-form" >
+				<input          
+           id="msg"
+        type="text">
+        <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
+			</form>
+		 </div>
+      </div>
+      <script
   src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
   integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
   crossorigin="anonymous"
@@ -60,5 +91,81 @@
   <script defer src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
   <script defer src="/socket.io/socket.io.js"></script>
   <script defer src="js/main.js"></script>
-</body>
+      <script>
+         function openNav() {
+           document.getElementById("mySidenav").style.width = "450px";
+         }
+         
+         function closeNav() {
+           document.getElementById("mySidenav").style.width = "0";
+         }
+      </script>
+      <span class="chat-icon" style="/* font-size:30px; *//* cursor:pointer; *//* position: absolute; *//* bottom: 0; *//* right: 0; */" onclick="openNav()">
+      <i class="fas fa-comment-dots"></i>
+      </span>
+      <script>
+         <!-- $(document).ready(function(){ -->
+           <!-- $(".owl-carousel").owlCarousel(); -->
+         <!-- }); -->
+         
+         
+         <!-- $('.owl-carousel').owlCarousel({ -->
+             <!-- loop:true, -->
+             <!-- margin:10, -->
+             <!-- nav:true, -->
+             <!-- responsive:{ -->
+                 <!-- 0:{ -->
+                     <!-- items:1 -->
+                 <!-- }, -->
+                 <!-- 600:{ -->
+                     <!-- items:4 -->
+                 <!-- }, -->
+                 <!-- 1000:{ -->
+                     <!-- items:5 -->
+                 <!-- } -->
+             <!-- } -->
+         <!-- }) -->
+         
+         
+          
+           
+          jQuery("#carousel").owlCarousel({
+           autoplay: false,
+           rewind: true, /* use rewind if you don't want loop */
+           margin: 5,
+            /*
+           animateOut: 'fadeOut',
+           animateIn: 'fadeIn',
+           */
+           responsiveClass: true,
+           autoHeight: true,
+           autoplayTimeout: 7000,
+           smartSpeed: 800,
+           nav: true,
+           responsive: {
+             0: {
+               items: 1
+             },
+         
+             600: {
+               items: 3
+             },
+         
+             1024: {
+               items: 5
+             },
+         
+             1366: {
+               items: 6
+             }
+           }
+         });
+         
+           
+         
+      </script>
+      <script defer="" src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+      <script defer="" src="/socket.io/socket.io.js"></script>
+      <script defer="" src="js/main.js"></script>
+   </body>
 </html>
