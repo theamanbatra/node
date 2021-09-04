@@ -56,6 +56,8 @@ navigator.mediaDevices.getUserMedia({
     myPeer.on('call', call => {
         call.answer(stream)
         const video = document.createElement('video')
+            console.log("======",video)
+
         call.on('stream', userVideoStream => {
             addVideoStream(video, userVideoStream)
         })
@@ -71,6 +73,7 @@ navigator.mediaDevices.getUserMedia({
 
 socket.on('user-disconnected', userId => {
     if (peers[userId]) peers[userId].close()
+    console.log(peers[userId])
 })
 
 myPeer.on('open', userPeerId => {
@@ -83,7 +86,11 @@ function connectToNewUser(userId, stream) {
     const video = document.createElement('video')
     call.on('stream', userVideoStream => {
         addVideoStream(video, userVideoStream)
-    })
+    }
+    
+
+    )
+
     call.on('close', () => {
         video.remove()
     })
@@ -92,11 +99,19 @@ function connectToNewUser(userId, stream) {
 }
 
 function addVideoStream(video, stream) {
+    const div = document.createElement('div');
+    div.classList.add('item');
+    // console.log("======divvvvvv",div)
+
     video.srcObject = stream
     video.addEventListener('loadedmetadata', () => {
         video.play()
     })
-    videoGrid.append(video)
+    div.append(video)
+   videoGrid.append(div)
+
+    console.log("======",videoGrid)
+
 }
 
 // Get room and users
@@ -194,6 +209,7 @@ chatForm.addEventListener('submit', (e) => {
 function outputMessage(message) {
     const div = document.createElement('div');
     div.classList.add('message');
+    console.log("messssssssss====",div)
 
     const p = document.createElement('p');
     p.classList.add('meta');
