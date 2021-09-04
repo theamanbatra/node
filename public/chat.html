@@ -33,11 +33,50 @@
     /* transform: translate(-50%, -50%); */
     border: 1px solid #fff;
 }
+
+.new-video img {
+    width: 315px;
+    height: 177px;
+    object-fit: cover;
+    border: 1px solid #fff;
+}
+
+.new-video {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    gap: 6px;
+}
+
+::-webkit-scrollbar { 
+  height:8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 10px 10px 10px #3ef8fa8e; 
+  border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #3ef8fa; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #23adaf; 
+}
+
+
+
+
       </style>
    </head>
    <body>
       <div class="vedio-bg">
-         <video src="couch.mp4" loop="" muted="" autoplay="">
+         <video src="images/couch.mp4" loop="" muted="" autoplay="">
          </video>
       </div>
       <div class="videoWrapper">
@@ -46,17 +85,22 @@
       
       <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'>
       <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
-      <div class="thumbnail-slider"  >
-         <div class="owl-slider">
-            <div id="carousel" class="owl-carousel">
-               <div class="item">
-                <div id="video-grid">
-                </div>           
-                  </div>
+      <!-- <div class="thumbnail-slider"  >
+        <div class="owl-slider">
+           <div id="carousel" class="owl-carousel">
+              <div class="item">
+                 <img src="images/1.jpg" alt="1000X1000">
+              </div>
+           </div>
+        </div>
+     </div> -->
+     <div class="thumbnail-slider">
+      <div class=" " style="">
+         <div class="new-video" id ="video-grid" style="">  
             
-            </div>
          </div>
       </div>
+   </div>
       <div id="mySidenav" class="sidenav">
          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
        
@@ -104,27 +148,27 @@
       <i class="fas fa-comment-dots"></i>
       </span>
       <script>
-         <!-- $(document).ready(function(){ -->
-           <!-- $(".owl-carousel").owlCarousel(); -->
-         <!-- }); -->
+        //  <!-- $(document).ready(function(){ -->
+        //    <!-- $(".owl-carousel").owlCarousel(); -->
+        //  <!-- }); -->
          
          
-         <!-- $('.owl-carousel').owlCarousel({ -->
-             <!-- loop:true, -->
-             <!-- margin:10, -->
-             <!-- nav:true, -->
-             <!-- responsive:{ -->
-                 <!-- 0:{ -->
-                     <!-- items:1 -->
-                 <!-- }, -->
-                 <!-- 600:{ -->
-                     <!-- items:4 -->
-                 <!-- }, -->
-                 <!-- 1000:{ -->
-                     <!-- items:5 -->
-                 <!-- } -->
-             <!-- } -->
-         <!-- }) -->
+        //  <!-- $('.owl-carousel').owlCarousel({ -->
+        //      <!-- loop:true, -->
+        //      <!-- margin:10, -->
+        //      <!-- nav:true, -->
+        //      <!-- responsive:{ -->
+        //          <!-- 0:{ -->
+        //              <!-- items:1 -->
+        //          <!-- }, -->
+        //          <!-- 600:{ -->
+        //              <!-- items:4 -->
+        //          <!-- }, -->
+        //          <!-- 1000:{ -->
+        //              <!-- items:5 -->
+        //          <!-- } -->
+        //      <!-- } -->
+        //  <!-- }) -->
          
          
           
